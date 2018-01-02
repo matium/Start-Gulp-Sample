@@ -1,0 +1,105 @@
+@charset "utf-8";
+@import "default";
+@import "mq";
+
+//*
+/// 背景色のリスト
+$smpBgColor: #000;
+$tabletBgColor: #66878c;
+$desktopBgColor: #5b6674;
+$xlargeBgColor: #b5b3ad;
+
+body {
+	background-color: $smpBgColor;
+	// 背景色をデバイスによって変更する
+	@include tablet { background-color: $tabletBgColor; }
+	@include desktop { background-color: $desktopBgColor; }
+	@include xlarge { background-color: $xlargeBgColor; }
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 100vh;
+	@include display-flex;
+	@include flex-direction(column);
+	@include align-items(center);
+	@include justify-content(center);
+	overflow-x: hidden;
+	background-image: url('../images/smp-bg-image.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	// スマートフォン以外のデバイスでは背景イメージを無くす
+	@include tablet { background-image: none; }
+	@include desktop { background-image: none; }
+	@include xlarge { background-image: none; }
+}
+
+//*
+/// デバイスのイメージ画像
+.device-image {
+	// サイズは固定する
+	width: 220px;
+	margin-bottom: 2em;
+
+	img {
+		display: block;
+		width: 100%;
+	}
+
+	@include tablet {
+		width: 486px;
+		margin-bottom: 3em;
+	}
+
+	@include desktop {
+		width: 855px;
+		margin-bottom: 3.5em;
+	}
+
+	@include xlarge {
+		width: 1076px;
+	}
+}
+
+//*
+/// メディアクエリの情報
+.mq-info {
+	width: 100%;
+	text-align: center;
+
+	// デバイス名
+	.mq-device-name {
+		font-family: 'Heebo', sans-serif;
+		font-weight: 700;
+		font-size: 16pt;
+		line-height: 1em;
+		letter-spacing: 0.125em;
+		margin-bottom: 0.4em;
+
+		@include tablet {
+			font-size: 28pt;
+			margin-bottom: 0.3em;
+		}
+
+		@include desktop {
+			font-size: 18pt;
+			margin-bottom: 0.3em;
+		}
+
+		@include xlarge {
+			font-size: 18pt;
+			margin-bottom: 0.3em;
+		}
+	}
+
+	// ブレークポイントに設定されているviewportの幅の数値
+	.mq-viewport-size {
+		line-height: 1em;
+		letter-spacing: 0.125em;
+
+		@include tablet { font-size: 15.5pt; }
+		@include desktop { font-size: 11pt; }
+		@include xlarge { font-size: 11pt; }
+	}
+}

@@ -52,7 +52,7 @@ gulp.task('tscompile', function(){
 		.pipe(tsProject());
 
 	tsResult.js.pipe(plumber())
-		.pipe(uglify({preserveComments: 'some'}))
+		.pipe(uglify({output: {comments: 'some'}}))
 		.pipe(gulp.dest('./'));
 });
 

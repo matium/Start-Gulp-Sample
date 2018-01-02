@@ -1,0 +1,37 @@
+//*
+/// Media Queries helper Mixins
+/// Selector Device's Name
+
+// media queries helper ////////////////////////////
+$smp-width: 320px;
+$tablet-width: 640px;
+$desktop-width: 1024px;
+$xlarge-width: 1600px;
+
+// SmartPhone device
+@mixin smp {
+	@media (max-width: #{$tablet-width - 1px}) {
+		@content;
+	}
+}
+
+// Tablet device
+@mixin tablet {
+	@media (min-width: #{$tablet-width + 1px}) and (max-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+// Desktop(Laptop PC) device
+@mixin desktop {
+	@media (min-width: #{$desktop-width + 1px}) and (max-width: #{$xlarge-width}) {
+		@content;
+	}
+}
+
+// X-Large(Over 2K Display)
+@mixin xlarge {
+	@media (min-width: #{$xlarge-width + 1px}) {
+		@content;
+	}
+}
