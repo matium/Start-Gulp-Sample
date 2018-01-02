@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "out": "public_html/js/main.js",
+    "rootDir":"./",
+    "target": "es5",
+    "removeComments": false,
+    "sourceMap": true
+  },
+  "files": [
+    "src/ts/main.ts"
+  ]
+}
