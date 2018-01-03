@@ -9,7 +9,7 @@
 	<meta name="description" content="スマホ〜タブレット端末〜PC〜大画面ディスプレイの4つのブレークポイントを持つレスポンシブデザインページを実装するCSS（SCSS+Compass）とJavaScriptのリサイズ処理のモックアップ／サンプルコード">
 
 	<!-- canonical -->
-	<link rel="canonical" href="http://play.matium.jp/mockup/responsive-design20180102/">
+	<link rel="canonical" href="http://play.matium.jp/demo/responsive-design20180103/">
 
 	<!-- css -->
 	<link rel="stylesheet" href="css/index.css">
@@ -21,12 +21,17 @@
 </head>
 
 <body>
+	<!-- センタリングのためのコンテナ用flexbox -->
 	<div class="wrapper">
+		<!-- デバイスのイメージ画像 -->
 		<figure class="device-image">
 			<img src="images/device-image_smp.png" alt="デバイスイメージ">
 		</figure>
+
 		<section class="mq-info">
+			<!-- デバイス名の表示 -->
 			<p class="mq-device-name"></p>
+			<!-- viewportの幅の表示 -->
 			<p class="mq-viewport-size"></p>
 		</section>
 	</div>
