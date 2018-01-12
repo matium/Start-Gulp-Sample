@@ -140,6 +140,9 @@ namespace matium.startgulp {
 
 let main: matium.startgulp.Main;
 let resizer: any;
+/**
+ * メインクラスをマウントして、リサイズイベントにリスナーをセット
+ */
 $(function(){
 	main = new matium.startgulp.Main();
 
